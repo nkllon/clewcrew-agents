@@ -55,10 +55,10 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/louspringer/clewcrew-agents"
-Documentation = "https://github.com/louspringer/clewcrew-agents#readme"
-Repository = "https://github.com/louspringer/clewcrew-agents.git"
-Issues = "https://github.com/louspringer/clewcrew-agents/issues"
+Homepage = "https://github.com/nkllon/clewcrew-agents"
+Documentation = "https://github.com/nkllon/clewcrew-agents#readme"
+Repository = "https://github.com/nkllon/clewcrew-agents.git"
+Issues = "https://github.com/nkllon/clewcrew-agents/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/clewcrew_agents"]
