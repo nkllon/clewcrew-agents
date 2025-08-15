@@ -113,7 +113,8 @@ class CodeQualityExpert(BaseExpert):
         
         return output_files
 
-    async def _analyze_existing_flake8_outputs(self, project_path: Path) -> list[dict[str, Any]]:
+    async def _analyze_existing_flake8_outputs( \
+    self, project_path: Path) -> list[dict[str, Any]]:
         """Analyze existing flake8 output files"""
         issues = []
         
@@ -165,7 +166,8 @@ class CodeQualityExpert(BaseExpert):
         
         return issues
 
-    async def _analyze_existing_black_outputs(self, project_path: Path) -> list[dict[str, Any]]:
+    async def _analyze_existing_black_outputs( \
+    self, project_path: Path) -> list[dict[str, Any]]:
         """Analyze existing black output files"""
         issues = []
         
@@ -196,7 +198,8 @@ class CodeQualityExpert(BaseExpert):
         
         return issues
 
-    async def _analyze_existing_mypy_outputs(self, project_path: Path) -> list[dict[str, Any]]:
+    async def _analyze_existing_mypy_outputs( \
+    self, project_path: Path) -> list[dict[str, Any]]:
         """Analyze existing mypy output files"""
         issues = []
         
@@ -324,8 +327,10 @@ class CodeQualityExpert(BaseExpert):
         
         # Extract specific issue types for quality enforcement
         flake8_issues = [h for h in result.hallucinations if h.get("tool") == "flake8"]
-        code_style_issues = [h for h in result.hallucinations if h.get("type") == "formatting_config"]
-        complexity_issues = [h for h in result.hallucinations if h.get("type") == "type_checking_config"]
+        code_style_issues  = \
+     [h for h in result.hallucinations if h.get("type") == "formatting_config"]
+        complexity_issues  = \
+     [h for h in result.hallucinations if h.get("type") == "type_checking_config"]
         
         return {
             "quality_score": quality_score,

@@ -184,7 +184,8 @@ class SecurityExpert(BaseExpert):
         return {
             "quality_score": quality_score,
             "issues_found": len(result.hallucinations),
-            "critical_issues": len([h for h in result.hallucinations if h.get("priority") == "critical"]),
+            "critical_issues": len([h for h in result.hallucinations if h.get("priority")  = \
+    = "critical"]),
             "high_issues": len([h for h in result.hallucinations if h.get("priority") == "high"]),
             "security_issues": result.hallucinations,
             "recommendations": result.recommendations,
@@ -223,11 +224,13 @@ class SecurityExpert(BaseExpert):
             change_content = change.get("content", "")
             
             # Check for potential security issues in changes
-            if any(pattern in change_content.lower() for pattern in ["password", "secret", "key", "token"]):
+            if any( \
+    pattern in change_content.lower() for pattern in ["password", "secret", "key", "token"]):
                 security_risks.append("Potential credential exposure in changes")
                 risk_level = "high"
             
-            if any(pattern in change_content.lower() for pattern in ["subprocess", "os.system", "eval", "exec"]):
+            if any( \
+    pattern in change_content.lower() for pattern in ["subprocess", "os.system", "eval", "exec"]):
                 security_risks.append("Potential command injection risk in changes")
                 risk_level = "critical"
         

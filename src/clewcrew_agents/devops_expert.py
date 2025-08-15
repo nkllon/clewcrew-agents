@@ -325,7 +325,8 @@ class DevOpsExpert(BaseExpert):
                                                 issues.append({
                                                     "type": "deployment_issue",
                                                     "file": str(k8s_file),
-                                                    "description": f"Container '{container.get('name', 'unknown')}' missing resource limits",
+                                                    "description": f"Container '{container.get( \
+    'name', 'unknown')}' missing resource limits",
                                                     "priority": "medium",
                                                     "tool": "kubernetes",
                                                     "source": "existing_config"
@@ -335,7 +336,8 @@ class DevOpsExpert(BaseExpert):
         
         return issues
 
-    async def _analyze_infrastructure_config(self, project_path: Path) -> list[dict[str, Any]]:
+    async def _analyze_infrastructure_config( \
+    self, project_path: Path) -> list[dict[str, Any]]:
         """Analyze existing infrastructure configuration files"""
         issues = []
         
